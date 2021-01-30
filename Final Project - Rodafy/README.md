@@ -1,0 +1,1 @@
+Rodafy is a project created to connect people who need a parking space to leave their vehicle with parking space owners that are willing to share their space for a fee

@@ -1,0 +1,76 @@
+{% extends "rodafy/layout.html" %}
+{% load static %}
+
+{% block body %}
+<title>Add a new space</title>
+
+{% if user.is_authenticated %}
+
+<div class="space"> 
+    <form action="{% url 'add_space' %}" method="post">
+      {% csrf_token %}
+      <div class="space-content">
+      <div class="form-group">
+        <p>Title</p>
+          <input class="form-control" autofocus type="text" name="title">
+      </div>
+      </div>
+
+      <div class="space-content">
+      <div class="form-group">
+        <p>Address</p>
+          <input class="form-control" type="text" name="address">
+      </div>
+      </div>
+
+      <div class="space-content">
+      <div class="form-group">
+        <p>Length in cm</p>
+          <input class="form-control" type="number" name="length">
+      </div>
+      </div>
+
+      <div class="space-content">
+      <div class="form-group">
+        <p>Width in cm</p>
+          <input class="form-control" type="number" name="width">
+      </div>
+      </div>
+
+      <div class="space-content">
+      <div class="form-group">
+        <p>Amount of vehiciles that you would like to rent your space for</p>
+          <input class="form-control" type="number" name="amount_vehicles_allowed">
+      </div>
+      </div>
+
+      <div class="space-content">
+      <div class="form-group">
+        <p>Price per month</p>
+          <input class="form-control" type="number" name="price">
+      </div>
+      </div>
+
+      <div class="space-content">
+      <div class="form-group">
+        <p>Description</p>
+          <input class="form-control" type="text" name="description">
+      </div>
+      </div>
+
+      <button class="big-button" type="submit" value="Add new space">Save</button>
+  </form>
+  </div>
+
+</div>
+
+
+
+
+
+{% else %}
+Pls register
+{% endif %}
+    
+
+{% endblock %}

@@ -1,0 +1,244 @@
+/*Navigation top bar*/
+
+.nav-item>a{
+  color:black;
+  font-size: 16px;
+  padding-right: 35px;
+  text-decoration: none;
+}
+
+.nav-item{
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+body{
+  background-color: #fff5e6;
+  align-content: center;
+  align-items: center;
+}
+
+
+nav{
+  width: 100%;
+  height: 80px;
+  background:#fff;
+  border-bottom: 1px solid transparent;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2) ;
+  transition: ease-in-out 0.5s; 
+  position: fixed;
+  top:0;
+  z-index: 100px;
+  margin-bottom: 200px;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  padding: 0 40px 50px;
+}
+
+.nav .logo{
+  height: 80px;
+}
+
+.nav .logo img{
+  height: 100%;
+  vertical-align: top;
+}
+
+.contenedor{
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.enlaces-header{
+  font-weight: 300;
+  transition: ease-in-out 0.5s;
+  margin-left: 350px;
+}
+.nav .enlaces-header a{
+  color: #5d6678;
+  text-decoration: none;
+  margin-left: 20px;
+  padding-left: 30px;
+}
+
+/*Footer*/
+
+/* Footer */
+
+footer{
+  background: #f2f2f2;
+  padding: 60px 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  }
+  
+  .partFooter{
+      width: 20%;
+      text-align: center;
+  }
+  
+  .partFooter h4{
+      color:#1d273b ;
+      font-size: 20;
+      font-weight:400;
+      margin-bottom: 30px;
+  }
+  
+  .partFooter a{
+      display: block;
+      text-decoration: none;
+      color: #5D6678;
+      font-weight: 300;
+      transition: color .3 ease-in-out;
+      margin-bottom: 3px;
+  }
+  
+  .partFooter a:hover{
+      color:#1FDE82;
+  }
+  
+  .partFooter img{
+      width: 70%;
+  }
+  
+  .social-media i{
+      font-size: 20px;
+      display: inline-block;
+      color: #adb6c7;
+      border: 1px solid #adb6c7;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      line-height: 36px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-align: center;
+      transition: all ease-in-out .3;
+      margin-right: 5px;
+  }
+
+  /* Main content*/
+
+  .maincontent {
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .maincontent button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+  input{
+  width: 20%;
+}
+
+form{
+  align-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.reviews tr{
+  text-align: left;
+  margin-top: 30px;
+}
+.login{
+  width: 16%;
+  margin-left: 42%;
+  padding-top: 200px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 310px;
+}
+
+.register{
+  width: 16%;
+  margin-left: 42%;
+  padding-top: 200px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 270px;
+}
+
+.search{
+  width: 16%;
+  margin-left: 42%;
+  padding-top: 200px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.table{
+  width: 50%;
+  margin-left: 25%;
+}
+
+/*Book*/
+
+
+.reviews{
+  height: auto;
+  align-content: left;
+  width: 50%;
+  margin-left: 25%;
+}
+.reviews tr{
+text-align: left;
+margin-top: 30px;
+}
+textarea{
+  width: 400px;
+  height: 200px;
+  text-align: left;
+  align-content: top;
+  resize: none;
+}
+.submission{
+  height: auto;
+  width: 100%;
+  text-align: left;
+  align-content: left;
+}
+
+.reviews_public{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  position:static
+}
+.card{
+  width: 40%;
+  margin: 10%, 10%, 10%, 10%;
+  height: 150px;
+  background-color: white;
+  border-color: grey;
+  text-align: left;
+  padding: 5px 5px 5px 5px;
+  margin-right:5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  flex-grow: 1;
+  display: inline-block;
+}
+#username{
+  height: 30px;
+}
+#text{
+  padding-top: 8px;
+}

@@ -1,0 +1,90 @@
+{% extends "rodafy/layout.html" %}
+{% load static %}
+{% block body %}
+
+
+{% if user.is_authenticated %}
+{% for list in listing %}
+<title>{{list.title}}</title>
+
+<!--Buttons to edit and save-->
+<div class="listing-contact">
+    <h1>{{list.title}}</h1>
+
+{% if user.id == list.user_id %}
+    <button class="big-button" type="submit" id="Edit_listing">Edit parking space</button> 
+    <form action="{% url 'edit_listing' id=list.id %}" method="post">
+        {% csrf_token %}
+    <button class="big-button" type="submit" id="Save_listing">Save changes</button>
+
+{% else %}
+<a href="{% url 'messages' user_id=list.user_id %}">
+<button class="big-button" style="height: 120%;">Book this parking space</button></a> 
+
+<a href="#" class="btn btn-success" id="Edit_listing" style="visibility: hidden;"></a>
+<a href="#" class="btn btn-success" id="Save_listing" style="visibility: hidden; height: 1px; width: 1px;"></a>
+{% endif %}
+</div>
+
+<hr style="width:75%;text-align:left;margin-left:0; margin-bottom: 35px;">
+
+<!--Price-->
+<div class="listing-title">Price</div>
+
+    <div class="listing-text-price">{{list.price}}€</div> 
+        <input class="form-control" autofocus type="text" name="form-control-price" id="form-control-price" value="{{list.price}}">
+        <hr style="width:40%;text-align:left;margin-left:0; margin-bottom: 35px;">
+
+
+<!--Measurements-->
+<div class="listing-title">Measurements</div>
+    <div id="car-container">
+        
+<div class="listing-text-width" style="float: right; position: absolute; width: 250px; margin-left: 110px; margin-bottom: 5px;">{{list.width}} cm</div>
+    <input class="form-control" autofocus type="text" name="form-control-width" id="form-control-width" value="{{list.width}}">
+<div class="listing-text-length" style="float: bottom; position: absolute; width: 250px; margin-left: 255px; margin-top: 68px;">{{list.length}} cm</div><br>
+    <input class="form-control" autofocus type="text" name="form-control-length" id="form-control-length" value="{{list.length}}">
+        <div class="coche"></div>
+    </div>
+    <hr style="width:40%;text-align:left;margin-left:0; margin-bottom: 35px;">
+
+<!--Address-->
+<div class="listing-title">Address</div>
+    <div class="listing-text-address">{{list.address}}</div>
+        <input class="form-control" autofocus type="text" name="form-control-address" id="form-control-address" value="{{list.address}}">
+            <hr style="width:40%;text-align:left;margin-left:0; margin-bottom: 35px;">
+
+<!--Availability-->
+<div class="listing-title">Availability</div>
+    <div class="listing-text-availability">{{list.amount_vehicles_current}} / {{list.amount_vehicles_allowed}} vehicles parked</div>
+        <input class="form-control" autofocus type="text" name="form-control-availability" id="form-control-availability" value="{{list.amount_vehicles_allowed}}">
+            <hr style="width:40%;text-align:left;margin-left:0; margin-bottom: 30px;">
+
+<!--Description-->
+<div class="listing-title">Description</div>
+    <div class="listing-text-description">{{list.description}}</div>
+        <input class="form-control" autofocus type="text" name="form-control-description" id="form-control-description" value="{{list.description}}">
+        
+{% if user.id == list.user_id %}
+</form>
+
+{% endif %}
+
+ 
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% else %}
+<a class="btn btn-primary" href="{% url 'register' %}">Register here!</a>
+{% endif %}
+{% endblock %}

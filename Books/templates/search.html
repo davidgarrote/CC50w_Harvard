@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+
+<div class="search">
+<form action="/search" method="post">
+    <input class="form-control" name="book_search" placeholder="Search by ISBN, author or title" type="text">
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+</div>
+{% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+{% endif %}
+
+{% if books %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Year</th>
+        <th scope="col">ISBN</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+          {% for book in books %}
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.year }}</td>
+        <td><a href="{{ url_for('book', book_id=book.isbn)}}">{{ book.isbn }}</a></td>
+      </tr>
+      {% endfor %}    
+    </tbody>
+  </table>
+      
+
+{% else %}
+{% endif %}
+{% endblock %}

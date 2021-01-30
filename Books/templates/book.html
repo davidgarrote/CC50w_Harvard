@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book
+{% endblock %}
+
+{% block main %}
+
+<section class="reviews"><br><br><br><br><br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Year</th>
+        <th scope="col">ISBN</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+          {% for book in books %}
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.year }}</td>
+        <td>{{ book.isbn }}</td>
+      </tr>
+        
+    </tbody>
+  </table>
+ 
+      
+  
+    <h4>Reviews Section</h4><br>
+    
+    <section class="submission">
+    <h6>Leave a review:</h6>
+<form action="/reviews" method="post">
+  <label for="exampleFormControlSelect1">Select your rating:</label>
+  <input type="hidden" value="{{ book.isbn }}" name="book_id">
+  <select class="form-control" id="exampleFormControlSelect1" name="rating">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select><br>
+    <textarea type="text" placeholder="Your review, maximum 300 characters" name="text" rows="30" cols="50" maxlength="300" wrap="on"></textarea>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</section>
+{% endfor %}  
+
+
+
+<br><br><h2>Reviews</h2><br>
+Amount reviews: {{ count }} <br>
+Average rating: {{ rating }} <br><br>
+<section class="reviews_public">
+  
+    {% for review in reviews %}
+    <div class="card">
+      <strong><div id="username">{{ review.username }}</div></strong>
+      {{ review.rating }} Stars
+      <div id="text">{{ review.text }}</div>
+    </div>
+      {% endfor %}
+    </section>
+  </section>
+
+  
+{% endblock %}

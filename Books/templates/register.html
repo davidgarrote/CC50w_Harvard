@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+<style>
+    .maincontent{
+    width:30%;
+  }
+</style>
+{% block main %}
+<div class="register">
+<form action="/register" method="post">
+        <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        <input class="form-control" name="password" placeholder="Password" type="password" width>
+        <input class="form-control" name="repeat_password" placeholder="Repeat password" type="password">
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+
+{% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>WinBooks {% block title %}{% endblock %}</title>
+
+</head>
+<body>
+
+  <nav>
+    <section class="contenedor nav">
+        <div class="logo">
+            <a href="/"><img src="/static/css/5a0934363f16f_thumb900.png" alt="" href="index.html"></a>
+        </div>
+        {% if session.get('logged_in') %}
+          <div class="enlaces-header">
+              <a href="/search">Search</a>
+              <a href="/logout">Logout</a>
+          </div>
+        {% else %}
+              <a href="/login">Login</a>
+              <a href="/register">Register</a>
+        {% endif %}
+    </section>
+</nav>
+
+<section class="maincontent">
+  {% block main %}{% endblock %}
+</section>
+
+<footer>
+  <div class="partFooter">
+      <img src="/static/css/5a0934363f16f_thumb900.png" alt="">
+  </div>  
+  <div class="partFooter">
+      <h4>Sevices</h4>
+      <a href="#">API</a>
+      <a href="#">Reviews</a>
+      <a href="#">Earn</a>
+  </div>
+  <div class="partFooter">
+      <h4>About us</h4>
+      <a href="#">Contact</a>
+      <a href="#">Help</a>
+      <a href="#">Where to find us</a>
+  </div>
+  <div class="partFooter">
+      <h4>Social media</h4>
+      <div class="social-media">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+      </div>
+  </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/0432eae287.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

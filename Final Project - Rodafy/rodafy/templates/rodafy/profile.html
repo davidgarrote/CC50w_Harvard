@@ -1,0 +1,54 @@
+{% extends "rodafy/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+<title>{{request.user.username|title}}'s Profile</title>
+
+<div class="profile">
+
+
+<div class="card-index" style="width: 18rem; height: 18rem; float: left; margin-right: 10%;">
+    <div class="card-body">
+      <h1 class="card-title">{{profileuser.username|title}}</h1>
+      <p>Joined on {{profileuser.date_joined | date:"F d"}}</p>
+      <p>{{profileuser.email}}</p>
+      <a href="mailto:{{profileuser.email}}" class="btn btn-primary">Contact</a>
+    </div>
+  </div>
+
+<div id=profile-content>
+
+  <h2 id=profile-title>Hi! I'm {{profileuser.username|title}}</h2><br>
+    <hr style="width:80%;text-align:left;margin-left:0; margin-bottom: 30px;">
+        <h2>Parking spaces</h2><br>
+
+<!-- Parking spaces -->
+    <div class="card-deck" style="text-align: left;">
+
+    {% for Parking_Space in parking %}
+        <div class="card bg-light mb-3" style="max-width: 18rem; background-color: red;">
+          <div class="card-body">
+            <div class="card-header"><strong>{{Parking_Space.title|title}}</strong></div><br>
+            <p class="card-text">{{Parking_Space.address}}</p>
+            <p class="card-text">{{Parking_Space.price}}€</p>
+            <p class="card-text">Vehicles parked: {{Parking_Space.amount_vehicles_current}} / {{Parking_Space.amount_vehicles_allowed}}</p>
+            <a href="{% url 'listing' id=Parking_Space.id %}">
+            <button class="big-button">View more</button>
+            </a>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Added on {{Parking_Space.created | date:"F d"}}</small>
+          </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+</div>
+
+{% else %}
+<a class="btn btn-primary" href="{% url 'register' %}">Register here!</a>
+{% endif %}
+{% endblock %}

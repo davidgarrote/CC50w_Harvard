@@ -1,0 +1,43 @@
+{% extends "rodafy/layout.html" %}
+{% load static %}
+
+{% block body %}
+<title>Find a parking</title>
+
+{% if user.is_authenticated %}
+
+<div class="search">
+
+    <h2>Where would you like to park your vehicle?</h2><br>
+    <form action="{% url 'search' %}" method="post">
+      {% csrf_token %}
+      <input class="form-control my-0 py-1" name="search" type="text" placeholder="Type here your city" aria-label="Search" style="width: 40%;"><br>
+      <button class="big-button" type="submit">Search</button><br><br>
+      </form>
+      <br>
+      {% for listing in finds %}
+
+      <div class="card-search">
+        <div class="card-header-search">
+          {{listing.address}}
+        </div>
+        <div class="card-body-search">
+          <h5 class="card-title-search">{{listing.title}}</h5>
+            <div class="price-box">{{listing.price}}€</div>
+          <p class="card-text-search">{{listing.description}}</p>
+          {% if listing.user_id == request.user.id %}
+          <i class="fas fa-user" style="float: right;" title="This is your own parking"></i>
+          {% endif %}
+          <a href="{% url 'listing' id=listing.id %}" class="btn-grad">See more</a>
+        </div>
+      </div>
+      
+      
+      
+      {% endfor %}
+    </div>
+
+{% else %}
+<a class="btn btn-primary" href="{% url 'register' %}">Register here!</a>
+{% endif %}
+{% endblock %}

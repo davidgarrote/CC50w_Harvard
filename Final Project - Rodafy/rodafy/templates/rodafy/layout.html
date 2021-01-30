@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="{% static 'rodafy/css/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+
+<body>
+    <nav class="navbar navbar-light bg-light" >
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'rodafy/images/rodafypng.png' %}" width="60%" height="60%" class="d-inline-block align-top" alt="">
+          </a>
+          <ul class="nav justify-content-end">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a href="{% url 'profile' username=user.username %}">
+                <button class="big-button"><strong>{{request.user.username|title}}</strong></button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'index' %}">
+                <button class="big-button">Start</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'logout' %}">
+                <button class="big-button">Logout</button>
+              </a>
+              </li>
+
+            {% else %}
+            <li class="nav-item">
+                <a href="{% url 'register' %}">
+                  <button class="big-button">Register</button>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="{% url 'login' %}">
+                  <button class="big-button">Login</button>
+                </a>
+            </li>
+            {% endif %}
+          </ul>
+      </nav>
+            
+
+<div class="body-content">
+{% block body %}
+{% endblock %}
+</div>
+</body>
+<script src="{% static 'rodafy/js/scripts_listing.js' %}"></script>
+<script src="{% static 'rodafy/js/scripts_search.js' %}"></script>
+<script src="{% static 'rodafy/js/messages.js' %}"></script>
+<script src="https://kit.fontawesome.com/0432eae287.js" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+<script>
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+</html>

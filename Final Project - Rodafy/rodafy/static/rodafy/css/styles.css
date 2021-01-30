@@ -1,0 +1,394 @@
+/* Computer responsive*/
+
+/* Index */
+
+body{
+    background: #1D976C;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.body-content {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 40px;
+}
+
+
+.options{
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+    display: inline-block;
+}
+
+.options div{
+    border-right: 20%;
+}
+
+
+.btn-primary{
+    width: 100%;
+}
+
+.card{
+    width: 40%;
+    text-align: center;
+    display:block;
+    float:left;
+    border-radius: 25%;
+    border-color: #fff;
+    align-items: center;
+}
+
+.card-index{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: border-box;
+    border: 2px solid white;
+    box-shadow: #fff;
+    border-radius: .25rem;
+    margin-bottom: 25px;
+    width: 40%;
+    border: 1px solid white;
+    float: left;
+    text-align: center;
+    font-size: 120%;
+  }
+
+.button-index{
+    width: 70%;
+    border-radius: 5%;
+}
+
+.btn-index {background-image: linear-gradient(to right, #0cebeb 0%, #20e3b2  51%, #0cebeb  100%)}
+  .btn-index {
+     margin: 5px;
+     padding: 15px 45px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 15px #eee;
+     border-radius: 10px;
+     display: block;
+     height: 15%;
+     width: 100%;
+   }
+
+   .btn-index:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+   }
+
+/* Register */
+
+#re{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/*Add space*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+.space{
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.space-content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Profile */
+
+.profile-title{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 300px;
+}
+
+.profile{
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+}
+
+.solid {
+    border-top: 3px solid #bbb;
+  }
+
+.profile-content {
+    width: 100%;
+    display: flex;
+}
+  
+/*Listing*/
+
+.listing-contact button, #Book_Listing{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-family: inherit;
+}
+
+
+.listing-contact{
+    position: relative;
+}
+
+.listing-title{
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.listing-text{
+    font-size: 130%;
+}
+
+#form-control-price{
+    width: 10%;
+}
+
+#form-control-width{
+    width: 30%;
+}
+
+#form-control-length{
+    width: 30%;
+}
+
+#form-control-address{
+    width: 30%;
+}
+
+#form-control-availability{
+    width: 30%;
+}
+
+#form-control-description{
+    width: 90%;
+    height: 100px;
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.coche{
+    border: solid black 4px;
+    height: 115px;
+    width: 250px;
+    margin-top: 5px;
+}
+
+#car-container{
+    width: 255px;
+}
+
+/*Add*/
+
+.input-group.md-form.form-sm.form-1 input{
+    border: 1px solid #bdbdbd;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+  .input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+  .input-group.md-form.form-sm.form-2 input.red-border {
+    border: 1px solid #ef9a9a;
+  }
+  .input-group.md-form.form-sm.form-2 input.lime-border {
+    border: 1px solid #cddc39;
+  }
+  .input-group.md-form.form-sm.form-2 input.amber-border {
+    border: 1px solid #ffca28;
+  }
+
+
+  /* Search */
+
+  .card-search{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: border-box;
+    border: 2px solid white;
+    box-shadow: #fff;
+    border-radius: .25rem;
+    margin-bottom: 25px;
+    width: 40%;
+  }
+
+  .card-header-search{
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(239, 251, 238, 1);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+  }
+
+  .card-header-search:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0; 
+  }
+
+  .card-body-search{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+  }
+
+  
+  .btn-grad {background-image: linear-gradient(to right, #0cebeb 0%, #20e3b2  51%, #0cebeb  100%)}
+  .btn-grad {
+     margin: 5px;
+     padding: 15px 45px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 15px #eee;
+     border-radius: 10px;
+     display: block;
+     height: 15%;
+     width: 35%;
+   }
+
+   .btn-grad:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+   }
+
+   :root {
+    --backgroundColor: rgba(246, 241, 209);
+    --colorShadeA: rgb(106, 163, 137);
+    --colorShadeB: rgb(121, 186, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 211);
+    --colorShadeE: rgb(205, 255, 232);
+  }
+  
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+  * {
+    box-sizing: border-box;
+  }
+  *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color:var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+  
+  button.big-button {
+    padding: 1em 2em;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  button.big-button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  
+  button.big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+  }
+  
+  button.big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+  }
+  
+  button.big-button:active {
+              transform: translate(0em, 0.75em);
+  }
+  
+  button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+    
+        box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+  
+  }
+  
+
+/* Mobile responsive */
+/*
+@media screen and (max-width:600px){
+
+
+}*/
+

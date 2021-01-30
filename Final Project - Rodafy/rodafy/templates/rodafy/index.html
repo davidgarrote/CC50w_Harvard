@@ -1,0 +1,39 @@
+{% extends "rodafy/layout.html" %}
+{% load static %}
+
+{% block body %}
+<title>Let's get started</title>
+
+    <div class="options">
+
+    <!-- Find a place to park-->
+
+        <div class="card-index" style="margin-right: 20%;">
+            <div class="card-body">
+              <h5 class="card-title">Find a parking space</h5>
+              <p class="card-text">You are looking for a safe space to park your vehicle</p>
+              {% if user.is_authenticated %}
+              <a href="{% url 'search_results' %}"><button class="big-button" id="find_parking" style="margin-bottom: 5%;">Start!</button></a>
+              {% else %}
+              <a href="{% url 'login' %}" id="login"><button class="big-button" style="margin-bottom: 5%"> Start!</button></a>
+              {% endif %}
+            </div>
+          </div>
+
+    <!-- Park my vehicle -->
+          <div class="card-index">
+            <div class="card-body">
+              <h5 class="card-title">List my parking space</h5>
+              <p class="card-text">You have free parking space that would like to rent</p>
+              {% if user.is_authenticated %}
+              <a href="{% url 'add_space' %}"><button class="big-button" id="find_parking" style="margin-bottom: 5%;">Start!</button></a>
+              {% else %}
+              <a href="{% url 'login' %}" id="login"><button class="big-button" style="margin-bottom: 5%">Start!</button></a>
+              {% endif %}
+            </div>
+          </div>
+    </div>
+
+    </div>
+
+{% endblock %}
